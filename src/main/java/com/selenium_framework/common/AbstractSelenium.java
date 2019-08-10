@@ -10,7 +10,9 @@ import java.net.URLDecoder;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 
+@Listeners(FrameworkListners.class)
 public class AbstractSelenium {
 
 	@DataProvider(name="CSVData")
@@ -36,10 +38,10 @@ public class AbstractSelenium {
 		
 	}
 	
-	@BeforeTest
+	/*@BeforeTest
 	public void callCreateWebDriverInstance(){
 		WebDriverFactory.createWebdriverInstance();
-	}
+	}*/
 	
 	@DataProvider(name="LoginData")
 	public String[][] getLoginData(){
